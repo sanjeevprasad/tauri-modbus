@@ -1,0 +1,24 @@
+[package]
+authors     = ["you"]
+build       = "src/build.rs"
+default-run = "modbus"
+description = "A Tauri App"
+edition     = "2018"
+license     = ""
+name        = "modbus"
+repository  = ""
+version     = "0.1.0"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+once_cell    = { default-features = false, version = "1.15.0" }
+serde        = { default-features = false, version = "1.0", features = ["derive"] }
+serde_json   = { default-features = false, version = "1.0", features = ["default"] }
+tauri        = { default-features = false, version = "1.0", features = ["compression", "objc-exception", "shell-open", "wry"] }
+tokio        = { default-features = false, version = "1.0", features = ["full"] }
+tokio-modbus = { default-features = false, version = "0.5.3", features = ["server", "rtu"] }
+tokio-serial = { default-features = false, version = "5.4.3" }
+
+[build-dependencies]
+tauri-build = { version = "1.0", features = [] }
